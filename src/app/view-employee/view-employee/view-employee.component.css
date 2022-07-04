@@ -1,0 +1,56 @@
+.employee .cardsection {
+    border-radius: .5rem;
+}
+
+.employee .detail-header {
+    border-radius: .5rem;
+    color: white;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.employee .p24 {
+    padding-top: 20px;
+}
+.employee .p52 {
+    padding-top: 52px;
+}
+
+.employee .detail-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.employee .gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgb(101, 120, 246), rgb(161, 130, 228));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgb(101, 120, 246), rgb(165, 137, 221));
+}
+
+.employee .detail-header .image-width {
+    width: 200px;
+}
+
+/* ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0em !important;
+} */
+
+::ng-deep .mat-form-field-infix {
+    border-top: 0em solid transparent !important;
+}
+
+::ng-deep .mat-form-field-appearance-standard .mat-form-field-underline {
+    height: 0px !important;
+}
+
+::ng-deep .mat-form-field-appearance-standard .mat-form-field-flex {
+    padding-top: 0em !important;
+}
+::ng-deep  .mat-form-field-flex {
+    bottom: 0em !important;
+}

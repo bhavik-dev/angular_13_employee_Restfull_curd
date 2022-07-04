@@ -1,0 +1,98 @@
+.single-cards {
+  margin: 20px 0;
+}
+
+.single-card .mat-card-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.single-card .mat-icon {
+  font-size: 55px;
+}
+
+.projects-card>mat-card-content {
+  max-height: 400px;
+  overflow: auto;
+}
+
+/* th.mat-header-cell,
+td.mat-cell {
+  text-align: center !important;
+} */
+
+mat-header-cell, mat-cell {
+  justify-content: center;
+}
+
+.mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  letter-spacing: normal;
+  outline: 0;
+}
+
+.mat-h2,
+.mat-title,
+.mat-typography h2 {
+  margin: 5px 0;
+}
+
+.dashboard .deshboard-section .mat-elevation-z0 {
+  box-shadow: none !important;
+}
+
+.dashboard .deshboard-section .mat-cell,
+.dashboard .deshboard-section .mat-header-cell {
+  border: none !important;
+}
+
+.dashboard .deshboard-section .table-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.dashboard .deshboard-section .table-head .search .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-outline-start {
+  border-radius: 28px 0 0 28px !important;
+  min-width: 28px !important;
+}
+
+::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+.dashboard .deshboard-section .table-head .search .mat-form-field-wrapper {
+  margin-bottom: -1.25em !important;
+  border-top-width: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.dashboard .deshboard-section .table-head .search .mat-form-field-infix {
+  padding: 0em !important;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.dashboard .deshboard-section .table-head .search .mat-form-field-appearance-outline .mat-form-field-flex {
+  padding: 0 0.75em 0 0.75em;
+  margin-top: -0.25em;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: rgb(235, 235, 235);
+}
+
+.tableWidth {
+  width: 100%;
+}

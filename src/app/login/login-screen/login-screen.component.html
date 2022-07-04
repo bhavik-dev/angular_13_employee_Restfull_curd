@@ -1,0 +1,63 @@
+<div @fadeIn class="container login" fxLayout="row" fxLayoutAlign="center none">
+
+    <div fxFlex="60%">
+        <div class="container" fxLayout="row" fxLayoutAlign="center none">
+            <div fxFlex="0 1 60%" class=" mt2">
+                <div class="container container-">
+                    <mat-card class="example-card mat-elevation-z8 cardsection">
+                        <mat-card-content>
+                            <div class="text-center">
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+                                    <div class="example-container container-width">
+
+
+                                        <mat-card-title class="text-center">Login</mat-card-title>
+
+                                        <!-- User Email Id -->
+                                        <div class="mt-top-2">
+                                            <mat-form-field>
+                                                <input matInput placeholder="Email" formControlName="email">
+                                                <mat-error
+                                                    *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+                                                    Please enter a valid email address
+                                                </mat-error>
+                                                <mat-error
+                                                    *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+                                                    Email is required
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <!-- Uesr Password -->
+                                        <div class="mt-top-2">
+                                            <mat-form-field>
+                                                <input matInput type="password" placeholder="Password"
+                                                    formControlName="password">
+                                                <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+                                                    Password length must be greater than or equal to 8 and password must
+                                                    contain one or
+                                                    more uppercase , lowercase , numeric and special characters
+                                                </mat-error>
+                                                <mat-error
+                                                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+                                                    Password is required
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <!-- Sign In -->
+                                        <div class="mt-top center">
+                                            <button [disabled]="!loginForm.valid" mat-raised-button color="primary"
+                                                mat-button>Sign
+                                                In</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

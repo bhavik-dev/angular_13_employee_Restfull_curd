@@ -1,0 +1,117 @@
+<div class="container employee" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="90%">
+        <div class="container" fxLayout="row" fxLayoutAlign="center none">
+            <div fxFlex="0 1 90%" class="deshboard-section mt2">
+
+                <div class="container">
+                    <mat-card class="example-card mat-elevation-z8 cardsection">
+                        <mat-card-content>
+
+
+                            <form [formGroup]="employeeForm" (ngSubmit)="onSubmitClick()">
+
+                                <!-- Employee Detail Header -->
+                                <div class="detail-header gradient-custom text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                        alt="Avatar" class="img-fluid my-5 image-width" />
+                                    <mat-card-title class="p24 text-center">
+                                        <mat-form-field appearance="standard">
+                                            <span class="text-center">
+                                                <input matInput formControlName="name"
+                                                    [readonly]="globalVariable.newViewEditDeleteApplication==1"
+                                                    placeholder="Enter your name here">
+                                            </span>
+                                        </mat-form-field>
+                                    </mat-card-title>
+                                </div>
+
+
+                                <!-- Employee Detail Body -->
+                                <div class="detail-body">
+                                    <span>
+
+                                        <!-- Employee Salary -->
+                                        <div class="p24">
+                                            <mat-card-subtitle>Salary</mat-card-subtitle>
+                                            <mat-card-title @leftSlideEffect class="text-muted">
+                                                <mat-form-field appearance="standard">
+                                                    <input type="tel" min="0" matInput formControlName="salary"
+                                                        placeholder="Enter Salary"
+                                                        [value]="employeeForm.get('salary')?.value| currencyPipe"
+                                                        [readonly]="globalVariable.newViewEditDeleteApplication==1"
+                                                        (keypress)="commonFunctions.validateNumber($event)">
+                                                </mat-form-field>
+                                            </mat-card-title>
+                                        </div>
+
+                                        <!-- Employee Phone -->
+                                        <div>
+                                            <mat-card-subtitle>Phone</mat-card-subtitle>
+                                            <mat-card-title elementHighlight @leftSlideEffect class="text-muted">923 456
+                                                7898
+                                            </mat-card-title>
+                                        </div>
+
+                                        <!-- Employee Id -->
+                                        <div class="p52" *ngIf="globalVariable.newViewEditDeleteApplication!=0">
+                                            <mat-card-subtitle>Employee Id</mat-card-subtitle>
+                                            <mat-card-title elementHighlight @leftSlideEffect class="text-muted">
+                                                {{employeeData.id}}
+                                            </mat-card-title>
+                                        </div>
+                                    </span>
+                                    <span>
+
+                                        <!-- Employee Age -->
+                                        <div class="p24">
+                                            <mat-card-subtitle>Age</mat-card-subtitle>
+                                            <mat-card-title @rightSlideEffect class="text-muted">
+                                                <mat-form-field appearance="standard">
+                                                    <input type="tel" min="0" matInput formControlName="age"
+                                                        placeholder="Enter Age"
+                                                        [value]="employeeForm.get('age')?.value | customPipe"
+                                                        [readonly]="globalVariable.newViewEditDeleteApplication==1"
+                                                        (keypress)="commonFunctions.validateNumber($event)">
+                                                </mat-form-field>
+                                            </mat-card-title>
+                                        </div>
+
+                                        <!-- Employee email -->
+                                        <div>
+                                            <mat-card-subtitle>Email</mat-card-subtitle>
+                                            <mat-card-title elementHighlight @rightSlideEffect class="text-muted">
+                                                employee@example.com
+                                            </mat-card-title>
+                                        </div>
+
+                                        <!-- Employee Address -->
+                                        <div class="p52">
+                                            <mat-card-subtitle>Address</mat-card-subtitle>
+                                            <mat-card-title elementHighlight @rightSlideEffect class="text-muted">
+                                                Mumbai, Maharashtra
+                                            </mat-card-title>
+                                        </div>
+                                    </span>
+                                </div>
+
+                                <div class="center" *ngIf="globalVariable.newViewEditDeleteApplication!=1">
+                                    <button type="submit" color="primary" mat-raised-button>
+                                        <ng-container
+                                            *ngIf="globalVariable.newViewEditDeleteApplication==0; else elseTemplate">
+                                            Save
+                                        </ng-container>
+                                        <ng-template #elseTemplate>
+                                            Update
+                                        </ng-template>
+
+                                    </button>
+                                </div>
+                            </form>
+
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
